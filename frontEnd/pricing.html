@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pitstop Pros</title>
+  <link rel="stylesheet" href="pricing.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="images/logo.png" alt="Pitstop Pros Logo" class="logo-img"><span class="logo-text">Pitstop Pros</span></a>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="pricing-main">
+    <section class="pricing-hero">
+      <h1>Our Service Pricing</h1>
+      <p>Transparent, competitive rates for quality auto repair services</p>
+    </section>
+
+    <section class="pricing-grid">
+      <div class="pricing-card">
+        <div class="service-icon">🛢️</div>
+        <h3>Oil Change</h3>
+        <div class="price">$70-100</div>
+        <ul class="service-details">
+          <p>The price range depends on the amount used in your specific car</p>
+          <li>Full Synthetic: $65</li>
+          <li>Oil filter replacement</li>
+          <li>Multi-point inspection</li>
+        </ul>
+        <button class="pricing-button book-btn" data-service="Oil Change">Book Service</button>
+      </div>
+
+      <div class="pricing-card">
+        <div class="service-icon">🛞</div>
+        <h3>Brake Service</h3>
+        <div class="price">$125 - $350</div>
+        <ul class="service-details">
+          <li>Brake Inspection: $25</li>
+          <li>Brake Pad Replacement: $125</li>
+          <li>Brake Rotor Replacement: $250</li>
+          <li>Complete Brake Service: $350</li>
+          <li>Free brake check</li>
+        </ul>
+        <button class="pricing-button book-btn" data-service="Brake Service">Book Service</button>
+      </div>
+
+      <div class="pricing-card">
+        <div class="service-icon">⚙️</div>
+        <h3>Transmission Service</h3>
+        <div class="price">$89 - $295</div>
+        <ul class="service-details">
+          <li>Transmission Diagnostic: $89</li>
+          <li>Fluid Change: $149</li>
+          <li>Filter Replacement: $195</li>
+          <li>Complete Service: $295</li>
+          <li>Performance test included</li>
+        </ul>
+        <button class="pricing-button book-btn" data-service="Transmission Service">Book Service</button>
+      </div>
+
+      <div class="pricing-card">
+        <div class="service-icon">🔧</div>
+        <h3>Engine Tune-Up</h3>
+        <div class="price">$175 - $425</div>
+        <ul class="service-details">
+          <li>Basic Tune-Up: $175</li>
+          <li>Standard Tune-Up: $275</li>
+          <li>Premium Tune-Up: $425</li>
+          <li>Spark plugs & filters</li>
+          <li>Engine performance analysis</li>
+        </ul>
+        <button class="pricing-button book-btn" data-service="Engine Tune-Up">Book Service</button>
+      </div>
+
+      <div class="pricing-card">
+        <div class="service-icon">❄️</div>
+        <h3>AC Repair</h3>
+        <div class="price">$95 - $285</div>
+        <ul class="service-details">
+          <li>AC Diagnostic: $95</li>
+          <li>Refrigerant Recharge: $145</li>
+          <li>Component Replacement: $195</li>
+          <li>Complete AC Service: $285</li>
+          <li>Performance guarantee</li>
+        </ul>
+        <button class="pricing-button book-btn" data-service="AC Repair">Book Service</button>
+      </div>
+
+      <div class="pricing-card featured">
+        <div class="service-icon">🏆</div>
+        <h3>Complete Inspection</h3>
+        <div class="price">$70</div>
+        <div class="badge">Most Popular</div>
+        <ul class="service-details">
+          <li>Comprehensive vehicle inspection</li>
+          <li>Engine diagnostics</li>
+          <li>Safety systems check</li>
+          <li>Fluid level inspection</li>
+          <li>Detailed report provided</li>
+        </ul>
+        <button class="pricing-button featured-button book-btn" data-service="Complete Inspection">Book Service</button>
+      </div>
+    </section>
+
+    <section class="pricing-info">
+      <div class="info-container">
+        <div class="info-item">
+          <h3>💰 Transparent Pricing</h3>
+          <p>No hidden fees or surprise charges. You'll know the cost upfront before any work begins.</p>
+        </div>
+        <div class="info-item">
+          <h3>⚡ Quick Service</h3>
+          <p>Most services completed same day. <br>
+            <b>What makes us different is that we come to your doorstep for any service.</b></p>
+        </div>
+        <div class="info-item">
+          <h3>🛡️ Quality Guarantee</h3>
+          <p>All our work comes with a comprehensive warranty. Your satisfaction is our priority.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Booking Popup Modal -->
+  <div id="bookingModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Book Your Service</h2>
+      <form id="bookingForm">
+        <div class="form-group">
+          <label for="serviceType">Service Type:</label>
+          <select id="serviceType" required>
+            <option value="">Select a service...</option>
+            <option value="Oil Change">Oil Change</option>
+            <option value="Brake Service">Brake Service</option>
+            <option value="Transmission Service">Transmission Service</option>
+            <option value="Engine Tune-Up">Engine Tune-Up</option>
+            <option value="AC Repair">AC Repair</option>
+            <option value="Complete Inspection">Complete Inspection</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="customerName">Full Name:</label>
+          <input type="text" id="customerName" required>
+        </div>
+
+        <div class="form-group">
+          <label for="customerAddress">Address:</label>
+          <input type="text" id="customerAddress" required>
+        </div>
+
+        <div class="form-group">
+          <label for="customerEmail">Email:</label>
+          <input type="email" id="customerEmail" required>
+        </div>
+
+        <div class="form-group">
+          <label for="customerPhone">Phone Number:</label>
+          <input type="tel" id="customerPhone" required>
+        </div>
+
+        <div class="date-time-section">
+          <label>Select Date & Time:</label>
+          <div class="calendar-time-picker">
+            <!-- Calendar on left -->
+            <div class="calendar-container">
+              <div class="calendar-header">
+                <button type="button" class="nav-btn prev-month">&lt;</button>
+                <h3 id="monthYear"></h3>
+                <button type="button" class="nav-btn next-month">&gt;</button>
+              </div>
+              <div class="weekdays">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+              </div>
+              <div id="calendar" class="calendar-days"></div>
+            </div>
+
+            <!-- Time slots on right -->
+            <div class="time-slots-container">
+              <div class="selected-date-display" id="selectedDateDisplay">Select a date</div>
+              <div id="timeSlots" class="time-slots">
+                <!-- Populated by JavaScript -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Hidden inputs to store values for form submission -->
+          <input type="hidden" id="serviceDate" required>
+          <input type="hidden" id="serviceTime" required>
+        </div>
+
+        <div class="form-group">
+          <label for="vehicleYear">Vehicle Year:</label>
+          <input type="number" id="vehicleYear" placeholder="e.g., 2019" required>
+        </div>
+
+        <div class="form-group">
+          <label for="vehicleMake">Vehicle Make:</label>
+          <input type="text" id="vehicleMake" placeholder="e.g., Honda" required>
+        </div>
+
+        <div class="form-group">
+          <label for="vehicleModel">Vehicle Model:</label>
+          <input type="text" id="vehicleModel" placeholder="e.g., Civic" required>
+        </div>
+
+        <div class="form-group">
+          <label for="vehicleTrim">Vehicle Trim:</label>
+          <input type="text" id="vehicleTrim" placeholder="e.g., EX, LX, SE (optional)">
+        </div>
+
+        <div class="form-group">
+          <label for="notes">Additional Notes:</label>
+          <textarea id="notes" rows="4" placeholder="Any special requests or details..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Confirm Booking</button>
+      </form>
+      <p id="bookingMessage"></p>
+    </div>
+  </div>
+
+  <script src="booking.js"></script>
+</body>
+</html>

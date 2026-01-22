@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pitstop Pros</title>
+  <link rel="stylesheet" href="contact.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="images/logo.png" alt="Pitstop Pros Logo" class="logo-img"><span class="logo-text">Pitstop Pros</span></a>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <form id="contactForm">
+      <p>Please fill out all fields and we will get back to you as soon as possible!</p>
+      <p><label>Your Name: <input type="text" name="name" required></label></p>
+      <p><label>Your Phone Number: <input type="text" name="phone" required></label></p>
+      <p><label>Your Email: <input type="email" name="email" required></label></p>
+      <p><label>Message: <textarea name="message" required></textarea></label></p>
+      <p><button type="submit">Send</button></p>
+    </form>
+    <p id="statusMessage"></p>
+  </main>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      
+      const form = this;
+      const button = form.querySelector('button[type="submit"]');
+      const statusEl = document.getElementById("statusMessage");
+      
+      // Get form data
+      const formData = {
+        name: form.querySelector('input[name="name"]').value,
+        phone: form.querySelector('input[name="phone"]').value,
+        email: form.querySelector('input[name="email"]').value,
+        message: form.querySelector('textarea[name="message"]').value
+      };
+      
+      // Show loading state
+      button.textContent = 'Sending...';
+      button.disabled = true;
+      statusEl.textContent = 'Sending your message...';
+      statusEl.style.color = '#007bff';
+      statusEl.style.display = 'block';
+      statusEl.style.padding = '1rem';
+      statusEl.style.borderRadius = '5px';
+      statusEl.style.textAlign = 'center';
+      statusEl.style.fontWeight = 'bold';
+      statusEl.style.backgroundColor = '#e3f2fd';
+      statusEl.style.border = '1px solid #90caf9';
+      statusEl.style.marginTop = '1rem';
+      
+      // Submit form using fetch API
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          // Success
+          statusEl.textContent = 'Message sent successfully! We\'ll get back to you soon.';
+          statusEl.style.color = '#155724';
+          statusEl.style.backgroundColor = '#d4edda';
+          statusEl.style.border = '1px solid #c3e6cb';
+          form.reset(); // Clear the form
+        } else {
+          throw new Error(data.error || 'Failed to send message');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        statusEl.textContent = 'Error sending message. Please try again.';
+        statusEl.style.color = '#721c24';
+        statusEl.style.backgroundColor = '#f8d7da';
+        statusEl.style.border = '1px solid #f5c6cb';
+      })
+      .finally(() => {
+        // Reset button
+        button.textContent = 'Send';
+        button.disabled = false;
+        
+        // Hide status message after 6 seconds
+        setTimeout(() => {
+          statusEl.style.display = 'none';
+        }, 6000);
+      });
+    });
+  </script>
+      });
+    });
+  </script>
+</body>
+</html>

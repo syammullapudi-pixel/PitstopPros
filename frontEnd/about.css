@@ -1,0 +1,204 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f8f9fa;
+}
+
+header {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: white;
+  padding: 1.2rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.logo a {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.logo a:hover {
+  color: #ff6b35;
+  transform: scale(1.05);
+}
+
+.logo-img {
+  height: 45px;
+  width: auto;
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+.logo-text {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.logo a:hover .logo-text {
+  color: #ff6b35;
+}
+
+nav {
+  display: flex;
+  gap: 3rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  position: relative;
+}
+
+nav a:hover {
+  color: #ff6b35;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: #ff6b35;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 20px;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+section h2 {
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+section p {
+  line-height: 1.6;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* Owner Section */
+.owner-section {
+  background: linear-gradient(135deg, #f0f4ff 0%, #fff5f0 100%);
+  padding: 1rem 3rem;
+  border-radius: 15px;
+  margin: 3rem 0;
+}
+
+.owner-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.owner-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  height: 350px;
+  margin: 0 auto;
+}
+
+.owner-photo {
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0, 123, 255, 0.2);
+  border: 4px solid white;
+  transition: transform 0.3s ease;
+}
+
+.owner-photo:hover {
+  transform: scale(1.03);
+}
+
+.owner-photo-main {
+  position: absolute;
+  top: 180px;
+  left: 0;
+  width: 320px;
+  height: 350px;
+  z-index: 1;
+  object-fit: cover;
+}
+
+.owner-photo-overlay {
+  position: absolute;
+  top: -100px;
+  right: -45px;
+  width: 330px;
+  height: auto;
+  z-index: 2;
+}
+
+.owner-bio {
+  padding: 1rem;
+}
+
+.owner-bio h2 {
+  font-size: 2.2rem;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+}
+
+.owner-bio p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.owner-bio p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive Design for Owner Section */
+@media (max-width: 768px) {
+  .owner-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .owner-photo {
+    max-width: 300px;
+  }
+
+  .owner-bio h2 {
+    font-size: 1.8rem;
+  }
+
+  .owner-section {
+    padding: 2rem 1rem;
+  }
+}

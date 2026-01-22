@@ -1,0 +1,905 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f8f9fa;
+}
+
+header {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: white;
+  padding: 1.2rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.logo a {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.logo a:hover {
+  color: #ff6b35;
+  transform: scale(1.05);
+}
+
+.logo-img {
+  height: 45px;
+  width: auto;
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+.logo-text {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.logo a:hover .logo-text {
+  color: #ff6b35;
+}
+
+nav {
+  display: flex;
+  gap: 3rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  position: relative;
+}
+
+nav a:hover {
+  color: #ff6b35;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: #ff6b35;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+.pricing-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.pricing-hero {
+  text-align: center;
+  padding: 3rem 0;
+  background-color: maroon;
+  color: white;
+  margin-bottom: 3rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+}
+
+.pricing-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.pricing-hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.pricing-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  border: 2px solid transparent;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.pricing-card.featured {
+  border: 2px solid #007bff;
+  background: linear-gradient(135deg, #ffffff, #f8f9ff);
+}
+
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.pricing-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 1.5rem;
+}
+
+.badge {
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  background: #ff6b35;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.service-details {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.service-details li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  color: #666;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.service-details li:before {
+  content: "✓";
+  color: #28a745;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.service-details li:last-child {
+  border-bottom: none;
+}
+
+.pricing-button {
+  display: inline-block;
+  background: #007bff;
+  color: white;
+  padding: 0.8rem 2rem;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.pricing-button:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+.featured-button {
+  background: #ff6b35;
+}
+
+.featured-button:hover {
+  background: #e55a2b;
+}
+
+.pricing-info {
+  background: #f8f9fa;
+  padding: 3rem 0;
+  margin-top: 3rem;
+  border-radius: 10px;
+}
+
+.info-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.info-item {
+  text-align: center;
+}
+
+.info-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.info-item p {
+  color: #666;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .pricing-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .pricing-hero p {
+    font-size: 1rem;
+  }
+  
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .pricing-card {
+    padding: 1.5rem;
+  }
+  
+  .price {
+    font-size: 1.5rem;
+  }
+  
+  .info-container {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+}
+
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+}
+
+footer p {
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* Booking Modal Styles */
+.modal {
+  display: none; /* hidden by default */
+  position: fixed; /* stays in place when scrolling */
+  z-index: 200; /* sits above everything */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent dark overlay */
+  animation: fadeIn 0.3s ease; /* smooth fade-in effect */
+}
+
+.modal.show {
+  display: flex; /* show the modal */
+  align-items: center; /* vertically center the content */
+  justify-content: center; /* horizontally center the content */
+}
+
+.modal-content {
+  background: white; /* white popup box */
+  padding: 2.5rem; /* space inside the box */
+  border-radius: 15px; /* rounded corners */
+  width: 90%; /* responsive width */
+  max-width: 500px; /* don't get too wide */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); /* shadow for depth */
+  position: relative; /* allows close button positioning */
+  animation: slideIn 0.4s ease; /* slides in smoothly */
+  max-height: 90vh; /* limit height to 90% of viewport */
+  overflow-y: auto; /* add vertical scrollbar when content overflows */
+  padding-right: 2rem; /* extra padding so scrollbar doesn't overlap content */
+}
+
+/* Style the scrollbar */
+.modal-content::-webkit-scrollbar {
+  width: 8px; /* width of scrollbar */
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: #f1f1f1; /* track color */
+  border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: #800000; /* scrollbar thumb color (maroon) */
+  border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: #6b0000; /* darker maroon on hover */
+}
+
+/* Firefox scrollbar styling */
+.modal-content {
+  scrollbar-color: #800000 #f1f1f1; /* Firefox: thumb track */
+  scrollbar-width: thin; /* Firefox: thin scrollbar */
+}
+
+.close {
+  position: absolute; /* position relative to modal-content */
+  right: 1.5rem;
+  top: 1.5rem;
+  font-size: 2rem; /* large X button */
+  font-weight: bold;
+  color: #666;
+  cursor: pointer; /* shows it's clickable */
+  transition: color 0.3s ease;
+  z-index: 201; /* sit above the modal */
+  background: white; /* white background for visibility */
+  width: 40px; /* make it a square */
+  height: 40px; /* clickable square area */
+  display: flex; /* center the X */
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; /* circular button */
+}
+
+.close:hover {
+  color: #800000; /* maroon on hover */
+}
+
+.modal-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+  font-weight: 800;
+}
+
+.form-group {
+  margin-bottom: 1.5rem; /* space between form fields */
+}
+
+.form-group label {
+  display: block; /* label goes on its own line */
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%; /* inputs take full width */
+  padding: 0.8rem;
+  border: 2px solid #ddd; /* light gray border */
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* Enhanced styling for date and time inputs */
+.form-group input[type="date"],
+.form-group input[type="time"] {
+  padding: 0.9rem;
+  font-size: 1.05rem;
+  cursor: pointer;
+  background: linear-gradient(to right, #f8f9fa 0%, white 100%);
+}
+
+.form-group input[type="date"]::-webkit-calendar-picker-indicator,
+.form-group input[type="time"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.form-group input[type="date"]::-webkit-calendar-picker-indicator:hover,
+.form-group input[type="time"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #ff6b35; /* orange border when focused */
+  box-shadow: 0 0 12px rgba(255, 107, 53, 0.3); /* enhanced orange glow */
+  transform: translateY(-1px); /* subtle lift on focus */
+}
+
+/* Better styling for select dropdown */
+.form-group select {
+  appearance: none; /* remove default styling */
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ff6b35' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.8rem center;
+  background-size: 1.2em;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+.form-group select:hover {
+  border-color: #ff6b35;
+  background-color: #f9f9f9;
+}
+
+/* Date/Time input wrapper for better layout */
+.date-time-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 480px) {
+  .date-time-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+.submit-btn {
+  width: 100%; /* full width button */
+  padding: 1rem;
+  background: linear-gradient(135deg, #800000, #a52a2a); /* maroon gradient */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(135deg, #6b0000, #8b1a1a); /* darker maroon on hover */
+  transform: translateY(-2px); /* slight lift effect */
+  box-shadow: 0 8px 25px rgba(128, 0, 0, 0.4);
+}
+
+.submit-btn:active {
+  transform: translateY(0); /* press down effect */
+}
+
+.submit-btn:disabled {
+  opacity: 0.6; /* dim when disabled */
+  cursor: not-allowed;
+}
+
+#bookingMessage {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+  min-height: 1.5rem;
+}
+
+#bookingMessage.success {
+  color: #28a745; /* green for success */
+}
+
+#bookingMessage.error {
+  color: #dc3545; /* red for error */
+}
+
+#bookingMessage.loading {
+  color: #007bff; /* blue for loading */
+}
+
+/* Calendar & Time Picker Styling */
+.date-time-section {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.date-time-section label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.calendar-time-picker {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Calendar Container */
+.calendar-container {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.calendar-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #1a1a1a;
+  min-width: 150px;
+  text-align: center;
+}
+
+.nav-btn {
+  background: white;
+  border: 1px solid #ddd;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #333;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-btn:hover {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.nav-btn:active {
+  transform: scale(0.95);
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.3rem;
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+
+.weekdays div {
+  font-weight: 600;
+  color: #666;
+  font-size: 0.85rem;
+  padding: 0.4rem 0;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.3rem;
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.calendar-day:not(.other-month):not(.disabled):hover {
+  background: #e3f2fd;
+  border-color: #007bff;
+}
+
+.calendar-day.selected {
+  background: #800000;
+  color: white;
+  border-color: #007bff;
+  font-weight: 700;
+}
+
+.calendar-day.today {
+  border: 2px solid #ff6b35;
+  font-weight: 700;
+}
+
+.calendar-day.today.selected {
+  background: #007bff;
+  border-color: #007bff;
+}
+
+.calendar-day.other-month {
+  color: #ccc;
+  background: #fafafa;
+  cursor: not-allowed;
+}
+
+.calendar-day.disabled {
+  color: #ccc;
+  background: #fafafa;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Time Slots Container */
+.time-slots-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.selected-date-display {
+  background: linear-gradient(135deg, #800000 0%, #a52a2a 100%);
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.05rem;
+  min-height: 20px;
+}
+
+.time-slots {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.time-slot {
+  padding: 0.9rem 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 500;
+  background: white;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.time-slot:hover:not(.unavailable) {
+  border-color: #007bff;
+  background: #e3f2fd;
+  transform: translateY(-2px);
+}
+
+.time-slot.selected {
+  background: #800000;
+  color: white;
+  border-color: #007bff;
+  font-weight: 700;
+}
+
+.time-slot.unavailable {
+  background: #f5f5f5;
+  color: #999;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Scrollbar styling for time slots */
+.time-slots::-webkit-scrollbar {
+  width: 6px;
+}
+
+.time-slots::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.time-slots::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.time-slots::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Calendar */
+@media (max-width: 900px) {
+  .calendar-time-picker {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .time-slots-container {
+    flex-direction: row;
+  }
+
+  .selected-date-display {
+    flex: 1;
+  }
+
+  .time-slots {
+    flex: 2;
+    grid-template-columns: repeat(3, 1fr);
+    max-height: 200px;
+  }
+}
+
+/* Responsive Modal */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    padding: 1.5rem;
+    padding-right: 2rem;
+    max-height: 85vh;
+  }
+
+  .close {
+    right: 1.5rem;
+    top: 1.5rem;
+    font-size: 1.5rem;
+    width: 35px;
+    height: 35px;
+  }
+
+  .modal-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.7rem;
+    font-size: 16px;
+  }
+
+  .submit-btn {
+    padding: 0.85rem;
+    font-size: 1rem;
+  }
+
+  .calendar-time-picker {
+    grid-template-columns: 1fr;
+  }
+
+  .time-slots {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .calendar-container {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    width: 98%;
+    padding: 1.2rem;
+    padding-right: 1.5rem;
+    max-height: 80vh;
+  }
+
+  .close {
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.3rem;
+    width: 32px;
+    height: 32px;
+  }
+
+  .modal-content h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .form-group {
+    margin-bottom: 0.8rem;
+  }
+
+  .form-group label {
+    font-size: 0.9rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.6rem;
+    font-size: 16px;
+  }
+
+  .submit-btn {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  .calendar-time-picker {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    padding: 1rem;
+  }
+
+  .calendar-container {
+    padding: 0.8rem;
+  }
+
+  .time-slots {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+    max-height: 250px;
+  }
+
+  .time-slot {
+    padding: 0.7rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .calendar-day {
+    font-size: 0.85rem;
+  }
+
+  .nav-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+}
+
