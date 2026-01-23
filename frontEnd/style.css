@@ -403,6 +403,7 @@ nav a:hover::after {
   background: white;
   max-width: 1400px;
   margin: 0 auto;
+  margin-bottom: 5.5rem;
   text-align: center;
 }
 
@@ -469,7 +470,7 @@ nav a:hover::after {
 .cta-section {
   background: linear-gradient(135deg, #800000 0%, #a52a2a 50%, #b23a3a 100%);
   color: white;
-  padding: 3rem 3rem;
+  padding: 5rem 3rem;
   text-align: center;
 }
 
