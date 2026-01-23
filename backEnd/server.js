@@ -250,5 +250,4 @@ app.listen(PORT, async () => {
 
   const url = `http://localhost:${PORT}`;
   console.log(`Server running at ${url}`);
-  open(url);
 });
