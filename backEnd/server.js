@@ -237,6 +237,11 @@ app.post('/api/bookings/create', async (req, res) => {
   }
 });
 
+// Fallback to serve index.html for all non-API routes (SPA support)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontEnd/index.html'));
+});
+
 // Start server
 app.listen(PORT, async () => {
   try {
