@@ -148,3 +148,81 @@ button {
 button:hover {
   background: green;
 }
+@media (max-width: 768px) {
+  header {
+    flex-direction: row;
+    gap: 1rem;
+    padding: 0.8rem 1rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo a {
+    font-size: 1.2rem;
+    gap: 0.5rem;
+  }
+
+  .logo-img {
+    height: 35px;
+  }
+
+  .logo-text {
+    font-size: 1rem;
+  }
+
+  nav {
+    gap: 1rem;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+  }
+
+  nav a {
+    font-size: 0.85rem;
+  }
+
+  form {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 0.8rem 0.8rem;
+    gap: 0.8rem;
+  }
+
+  .logo a {
+    font-size: 1.1rem;
+    gap: 0.4rem;
+  }
+
+  .logo-img {
+    height: 30px;
+  }
+
+  .logo-text {
+    display: none;
+  }
+
+  nav {
+    gap: 0.8rem;
+    flex-wrap: nowrap;
+  }
+
+  nav a {
+    font-size: 0.75rem;
+  }
+
+  main {
+    padding: 1rem 10px;
+  }
+
+  form {
+    padding: 1.5rem 1rem;
+  }
+
+  button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}

@@ -463,6 +463,33 @@ footer p {
 }
 
 @media (max-width: 480px) {
+  header {
+    padding: 0.8rem 0.8rem;
+    gap: 0.8rem;
+  }
+
+  .logo a {
+    font-size: 1.1rem;
+    gap: 0.4rem;
+  }
+
+  .logo-img {
+    height: 30px;
+  }
+
+  .logo-text {
+    display: none;
+  }
+
+  nav {
+    gap: 0.8rem;
+    flex-wrap: nowrap;
+  }
+
+  nav a {
+    font-size: 0.75rem;
+  }
+
   .date-time-wrapper {
     grid-template-columns: 1fr;
   }
