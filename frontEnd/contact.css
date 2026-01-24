@@ -214,15 +214,38 @@ button:hover {
   }
 
   main {
-    padding: 1rem 10px;
-  }
-
-  form {
     padding: 1.5rem 1rem;
   }
 
+  form {
+    padding: 2rem 1.5rem;
+  }
+
+  form p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+  }
+
+  label {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    padding: 1.2rem;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  textarea {
+    min-height: 180px;
+  }
+
   button {
-    padding: 0.8rem 1.5rem;
-    font-size: 0.9rem;
+    padding: 1.2rem 2rem;
+    font-size: 1.1rem;
+    width: 100%;
   }
 }
