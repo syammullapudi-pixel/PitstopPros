@@ -235,7 +235,12 @@ bookingForm.addEventListener('submit', async function(e) {
   const customerName = document.getElementById('customerName').value;
   const customerEmail = document.getElementById('customerEmail').value;
   const customerPhone = document.getElementById('customerPhone').value;
-  const customerAddress = document.getElementById('customerAddress').value;
+  const customerStreet = document.getElementById('customerStreet').value;
+  const customerCity = document.getElementById('customerCity').value;
+  const customerState = document.getElementById('customerState').value;
+  const customerZip = document.getElementById('customerZip').value;
+  const customerUnit = document.getElementById('customerUnit').value;
+  const customerAddress = `${customerStreet}${customerUnit ? ' ' + customerUnit : ''}, ${customerCity}, ${customerState} ${customerZip}`;
   const vehicleYear = document.getElementById('vehicleYear').value;
   const vehicleMake = document.getElementById('vehicleMake').value;
   const vehicleModel = document.getElementById('vehicleModel').value;
