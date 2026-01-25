@@ -457,11 +457,7 @@ footer p {
 
 /* Address fields styling */
 .address-fields {
-  background: #f8f9fa;
-  padding: 1.5rem;
-  border-radius: 8px;
   margin-bottom: 1.5rem;
-  border: 1px solid #ddd;
 }
 
 .address-fields .form-group {
@@ -496,7 +492,7 @@ footer p {
   }
 
   .address-fields {
-    padding: 1rem;
+    margin-bottom: 1.5rem;
   }
 
   .address-row {
