@@ -713,7 +713,7 @@ footer p {
 }
 
 .calendar-day.today.selected {
-  background: #007bff;
+  background: #800000;
   border-color: #007bff;
 }
 
