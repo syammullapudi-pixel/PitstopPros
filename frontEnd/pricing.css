@@ -807,6 +807,18 @@ footer p {
   background: #555;
 }
 
+/* Closed message styling */
+.closed-message {
+  padding: 20px 15px;
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  margin: 10px 0;
+}
+
 /* Animations */
 @keyframes fadeIn {
   from {

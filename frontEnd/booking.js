@@ -14,6 +14,99 @@ let currentYear = new Date().getFullYear();
 let selectedDate = null;
 let selectedTime = null;
 
+// Define time slots for each day of the week (0 = Sunday, 6 = Saturday)
+const daySchedule = {
+  0: { // Sunday - CLOSED
+    name: 'Sunday',
+    slots: []
+  },
+  1: { // Monday
+    name: 'Monday',
+    slots: [
+      { time: '06:00', display: '6:00 PM' },
+      { time: '06:30', display: '6:30 PM' },
+      { time: '07:00', display: '7:00 PM' },
+      { time: '07:30', display: '7:30 PM' }
+    ]
+  },
+  2: { // Tuesday
+    name: 'Tuesday',
+    slots: [
+      { time: '04:30', display: '4:30 PM' },
+      { time: '05:00', display: '5:00 PM' },
+      { time: '06:00', display: '6:00 PM' },
+      { time: '06:30', display: '6:30 PM' },
+      { time: '07:00', display: '7:00 PM' },
+      { time: '07:30', display: '7:30 PM' }
+    ]
+  },
+  3: { // Wednesday
+    name: 'Wednesday',
+    slots: [
+      { time: '04:30', display: '4:30 PM' },
+      { time: '05:00', display: '5:00 PM' },
+      { time: '06:00', display: '6:00 PM' },
+      { time: '06:30', display: '6:30 PM' },
+      { time: '07:00', display: '7:00 PM' },
+      { time: '07:30', display: '7:30 PM' }
+    ]
+  },
+  4: { // Thursday
+    name: 'Thursday',
+    slots: [
+      { time: '09:00', display: '8:00 AM' },
+      { time: '09:30', display: '8:30 AM' },
+      { time: '10:00', display: '9:00 AM' },
+      { time: '10:30', display: '9:30 AM' },
+      { time: '11:00', display: '10:00 AM' },
+      { time: '11:30', display: '10:30 AM' },
+      { time: '12:00', display: '11:00 AM' },
+      { time: '12:30', display: '11:30 AM' },
+      
+      { time: '18:00', display: '6:00 PM' },
+      { time: '18:30', display: '6:30 PM' }
+    ]
+  },
+  5: { // Friday
+    name: 'Friday',
+    slots: [
+      { time: '06:00', display: '6:00 PM' },
+      { time: '06:30', display: '6:30 PM' },
+      { time: '07:00', display: '7:00 PM' },
+      { time: '07:30', display: '7:30 PM' }
+    ]
+  },
+  6: { // Saturday
+    name: 'Saturday',
+    slots: [
+      { time: '07:00', display: '7:00 AM' },
+      { time: '07:30', display: '7:30 AM' },
+      { time: '08:00', display: '8:00 AM' },
+      { time: '08:30', display: '8:30 AM' },
+      { time: '09:00', display: '9:00 AM' },
+      { time: '09:30', display: '9:30 AM' },
+      { time: '10:00', display: '10:00 AM' },
+      { time: '10:30', display: '10:30 AM' },
+      { time: '11:00', display: '11:00 AM' },
+      { time: '11:30', display: '11:30 AM' },
+      { time: '12:00', display: '12:00 PM' },
+      { time: '12:30', display: '12:30 PM' },
+      { time: '13:00', display: '1:00 PM' },
+      { time: '13:30', display: '1:30 PM' },
+      { time: '14:00', display: '2:00 PM' },
+      { time: '14:30', display: '2:30 PM' },
+      { time: '15:00', display: '3:00 PM' },
+      { time: '15:30', display: '3:30 PM' },
+      { time: '16:00', display: '4:00 PM' },
+      { time: '16:30', display: '4:30 PM' },
+      { time: '17:00', display: '5:00 PM' },
+      { time: '17:30', display: '5:30 PM' },
+      { time: '18:00', display: '6:00 PM' },
+      { time: '18:30', display: '6:30 PM' }
+    ]
+  }
+};
+
 // Open modal when any "Book Service" button is clicked
 bookBtns.forEach(btn => {
   btn.addEventListener('click', function() {
@@ -172,21 +265,22 @@ function renderTimeSlots() {
     return;
   }
   
-  // Generate time slots (30-minute intervals from 7:30 AM to 6 PM)
-  const timeSlots = [];
-  // Start at 7:30 AM
-  timeSlots.push({ time: '07:30', display: formatTime(7, 30) });
-  // Generate slots from 8 AM to 5:30 PM
-  for (let hour = 8; hour <= 17; hour++) {
-    for (let min = 0; min < 60; min += 30) {
-      if (hour === 17 && min > 30) break; // Stop at 6 PM
-      const timeStr = `${String(hour).padStart(2, '0')}:${String(min).padStart(2, '0')}`;
-      const displayTime = formatTime(hour, min);
-      timeSlots.push({ time: timeStr, display: displayTime });
-    }
+  // Get the day of week for the selected date
+  const dateObj = new Date(selectedDate + 'T00:00:00');
+  const dayOfWeek = dateObj.getDay();
+  
+  // Get the time slots for this day
+  const todaySchedule = daySchedule[dayOfWeek];
+  const timeSlots = todaySchedule.slots;
+  
+  // If closed, show message
+  if (timeSlots.length === 0) {
+    const closedMsg = document.createElement('div');
+    closedMsg.className = 'closed-message';
+    closedMsg.textContent = `We're closed on ${todaySchedule.name}s. Please select another day.`;
+    timeSlotsContainer.appendChild(closedMsg);
+    return;
   }
-  // Add 6 PM
-  timeSlots.push({ time: '18:00', display: formatTime(18, 0) });
   
   // Render time slots
   timeSlots.forEach(slot => {
@@ -211,13 +305,6 @@ function renderTimeSlots() {
     
     timeSlotsContainer.appendChild(slotBtn);
   });
-}
-
-// Format time to 12-hour format
-function formatTime(hour, minutes) {
-  const ampm = hour >= 12 ? 'PM' : 'AM';
-  const displayHour = hour % 12 || 12;
-  return `${displayHour}:${String(minutes).padStart(2, '0')} ${ampm}`;
 }
 
 // Handle form submission
