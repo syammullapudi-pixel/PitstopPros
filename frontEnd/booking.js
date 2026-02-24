@@ -54,14 +54,14 @@ const daySchedule = {
   4: { // Thursday
     name: 'Thursday',
     slots: [
-      { time: '09:00', display: '8:00 AM' },
-      { time: '09:30', display: '8:30 AM' },
-      { time: '10:00', display: '9:00 AM' },
-      { time: '10:30', display: '9:30 AM' },
-      { time: '11:00', display: '10:00 AM' },
-      { time: '11:30', display: '10:30 AM' },
-      { time: '12:00', display: '11:00 AM' },
-      { time: '12:30', display: '11:30 AM' },
+      { time: '09:00', display: '9:00 AM' },
+      { time: '09:30', display: '9:30 AM' },
+      { time: '10:00', display: '10:00 AM' },
+      { time: '10:30', display: '10:30 AM' },
+      { time: '11:00', display: '11:00 AM' },
+      { time: '11:30', display: '11:30 AM' },
+      { time: '12:00', display: '12:00 PM' },
+      { time: '12:30', display: '12:30 PM' },
       
       { time: '18:00', display: '6:00 PM' },
       { time: '18:30', display: '6:30 PM' }
