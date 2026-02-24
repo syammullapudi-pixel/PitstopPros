@@ -686,7 +686,7 @@ footer p {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #ddd;
+  border: 2px solid #ddd;
   border-radius: 6px;
   background: white;
   cursor: pointer;
@@ -695,9 +695,14 @@ footer p {
   transition: all 0.2s ease;
 }
 
+.calendar-day:not(.other-month):not(.disabled) {
+  border-color: #007bff;
+  background: #f0f8ff;
+}
+
 .calendar-day:not(.other-month):not(.disabled):hover {
   background: #e3f2fd;
-  border-color: #007bff;
+  border-color: #0056b3;
 }
 
 .calendar-day.selected {
