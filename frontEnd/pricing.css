@@ -651,9 +651,9 @@ footer p {
 }
 
 .nav-btn:hover {
-  background: #007bff;
+  background: #800000;
   color: white;
-  border-color: #007bff;
+  border-color: #800000;
 }
 
 .nav-btn:active {
